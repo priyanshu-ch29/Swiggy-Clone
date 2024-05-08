@@ -1,13 +1,15 @@
-import Navabar from './components/Navbar'
-import SignIn from './components/SignIn'
+import Navabar from "./components/Navbar";
+import Product from "./components/Product";
+import SignIn from "./components/SignIn";
 
 function App() {
   return (
     <>
-      <Navabar/>
-      <SignIn/>
+      <Navabar />
+      <Product />
+      <SignIn />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

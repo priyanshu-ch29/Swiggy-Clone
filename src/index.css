@@ -3,3 +3,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.after-Heading::after{
+    content: "";
+    background-color: black;
+    height: 3px;
+    width: 30%;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    color: black;
+    border-radius: 50%;
+}
+
+.line-after {
+    content: "";
+    background-color: rgb(222, 221, 221);
+    height: 2px;
+    width: 70%;
+    position: relative;
+    top: 30px;
+    left: 15%;
+    color: rgb(213, 212, 212);
+    border-radius: 50%;
+  }
+  
+  
