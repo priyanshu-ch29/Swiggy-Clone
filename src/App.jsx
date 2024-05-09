@@ -1,15 +1,24 @@
-import Navabar from "./components/Navbar";
-import Product from "./components/Product";
-import SignIn from "./components/SignIn";
+import { createBrowserRouter } from "react-router-dom";
+import Body from "./components/Body";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   return (
     <>
-      <Navabar />
-      <Product />
-      <SignIn />
+      <Body />
     </>
   );
 }
+
+export const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/SingleProduct/:id",
+    element: <SingleProduct />,
+  },
+]);
 
 export default App;

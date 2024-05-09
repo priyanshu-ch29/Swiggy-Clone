@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  PushSpinner,
-  TraceSpinner,
-  RainbowSpinner,
-  RingSpinner,
-  SwishSpinner,
-  PongSpinner,
-  MetroSpinner,
-  JellyfishSpinner,
-} from "react-spinners-kit";
+import { MetroSpinner } from "react-spinners-kit";
 
 function Loader() {
   const [loading, setLoading] = useState(true);

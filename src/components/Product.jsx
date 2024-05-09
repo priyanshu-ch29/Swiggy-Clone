@@ -11,7 +11,7 @@ function Product() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setFoodChoice(WhatsMind);
-    }, 4000);
+    }, 3000);
 
     return () => {
       clearInterval(intervalId);
@@ -20,11 +20,11 @@ function Product() {
 
   const nextSlide = () => {
     if (foodChoice.length - 7 == slide) return false;
-    setSlide(slide + 3);
+    setSlide(slide + 2);
   };
 
   const prevSlide = () => {
-    setSlide(slide - 3);
+    setSlide(slide - 2);
   };
 
   return foodChoice.length === 0 ? (
@@ -34,7 +34,7 @@ function Product() {
       <div className="flex justify-center items-center m-5">
         <div className="w-[80%] relative overflow-hidden">
           <div className="flex justify-between">
-            <h2 className="text-[24px] font-font-poppins font-bold p-3">
+            <h2 className="text-[24px] font-font-poppins font-bold p-3 pl-[45px]">
               What's on your mind?
             </h2>
             <div className="text-[28px] flex p-6">

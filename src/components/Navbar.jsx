@@ -10,6 +10,7 @@ import { navLinks } from "../utils/constant";
 import { IoMenu } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSignIn, handleToggle } from "../utils/toggleSlice";
+import { Link } from "react-router-dom";
 
 function Navabar() {
   const dispatch = useDispatch();
@@ -45,7 +46,9 @@ function Navabar() {
   return (
     <>
       <nav className="flex  items-center justify-between px-[130px] font-font-poppins shadow-lg py-3">
-        <img className="w-[50px]" src={logo} alt="" />
+        <Link to={"/"}>
+          <img className="w-[50px]" src={logo} alt="" />
+        </Link>
         <ul className="flex items-center space-x-4 max-lg:hidden">
           {navLinks.map((links, index) => {
             return (
