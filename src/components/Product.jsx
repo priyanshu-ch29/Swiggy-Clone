@@ -11,7 +11,7 @@ function Product() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setFoodChoice(WhatsMind);
-    }, 3000);
+    }, 2000);
 
     return () => {
       clearInterval(intervalId);

@@ -7,7 +7,6 @@ import Card from "../components/Card";
 function Body() {
   return (
     <div>
-      <Navbar />
       <Product />
       <SignIn />
       <Card />

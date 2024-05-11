@@ -3,9 +3,9 @@ import { CDN_URL } from "../utils/constant";
 
 const SingleCard = ({ items }) => {
   const { cloudinaryImageId, name, cuisines, avgRatingString, areaName } =
-    items;
+    items?.info;
 
-  const { deliveryTime } = items?.sla;
+  const { deliveryTime } = items?.info?.sla;
 
   return (
     <>
@@ -18,7 +18,7 @@ const SingleCard = ({ items }) => {
           {name}
         </h3>
         <h4 className="font-semibold font-font-poppins text-[15px]">
-          {avgRatingString} stars .{deliveryTime} min
+          {avgRatingString} stars . {deliveryTime} min
         </h4>
         <h4 className="pt-1 font-font-poppins">{cuisines.join(", ")}</h4>
         <h4 className="pt-1 font-font-poppins">{areaName}</h4>

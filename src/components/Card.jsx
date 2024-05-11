@@ -16,9 +16,7 @@ function Card() {
     );
     const json = await data.json();
     setCard(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map(
-        (restaurant) => restaurant.info
-      )
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -31,8 +29,8 @@ function Card() {
       </h2>
       <div className="grid grid-cols-4 gap-4 w-[80%] justify-center justify-items-center mx-auto max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
         {card.map((items) => (
-          <Link to={`/SingleProduct/${items?.id}`}>
-            <SingleCard key={items?.id} items={items} />
+          <Link key={items?.info?.id} to={`/SingleProduct/${items?.info?.id}`}>
+            <SingleCard items={items} />
           </Link>
         ))}
       </div>
