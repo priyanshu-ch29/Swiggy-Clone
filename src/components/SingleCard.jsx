@@ -21,7 +21,7 @@ const SingleCard = ({ items }) => {
           {avgRatingString} stars . {deliveryTime} min
         </h4>
         <h4 className="pt-1 font-font-poppins">{cuisines.join(", ")}</h4>
-        <h4 className="pt-1 font-font-poppins">{areaName}</h4>
+        <h4 className="pt-1 font-font-poppins font-semibold">{areaName}</h4>
       </div>
     </>
   );

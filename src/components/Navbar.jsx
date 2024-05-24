@@ -36,7 +36,6 @@ function Navabar() {
 
   const handlingToggle = () => {
     dispatch(handleToggle());
-    console.log(val);
   };
 
   const handle = (id) => {
@@ -50,13 +49,13 @@ function Navabar() {
           <img className="w-[50px]" src={logo} alt="" />
         </Link>
         <ul className="flex items-center space-x-4 max-lg:hidden">
-          {navLinks.map((links, index) => {
+          {navLinks.map((links) => {
             return (
               <>
                 <li
+                  key={links.id}
                   onClick={() => handle(links.id)}
                   className="px-2 flex hover:cursor-pointer font-bold hover:text-orange-600"
-                  key={links.id}
                 >
                   <span className="m-1">{renderIcon(links.linkLogo)}</span>
                   {links.linkName}
@@ -64,6 +63,14 @@ function Navabar() {
               </>
             );
           })}
+          <Link to="/Cart">
+            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+              <span className="m-1">
+                <IoCart />
+              </span>
+              Cart(0)
+            </li>
+          </Link>
         </ul>
 
         <IoMenu

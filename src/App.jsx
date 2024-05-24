@@ -4,6 +4,7 @@ import SingleProduct from "./components/SingleProduct";
 import Navabar from "./components/Navbar";
 import Error from "./components/Error";
 import SignIn from "./components/SignIn";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -27,6 +28,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/SingleProduct/:id",
         element: <SingleProduct />,
+      },
+      {
+        path: "/Cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

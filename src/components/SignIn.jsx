@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
 import { handleReferralCode, handleToggleCross } from "../utils/toggleSlice";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 
 function SignIn() {
   const [isSignUpForm, setisSignUpForm] = useState(false);

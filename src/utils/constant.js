@@ -33,11 +33,6 @@ export const navLinks = [
     linkName: "Sign In",
     linkLogo: "FaHouseUser",
   },
-  {
-    id: 6,
-    linkName: "Cart",
-    linkLogo: "IoCart",
-  },
 ];
 
 export const WhatsMind = [

@@ -52,9 +52,9 @@ function Product() {
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${slide * 160}px)` }}
           >
-            {foodChoice.map((item, index) => (
+            {foodChoice.map((item) => (
               <img
-                key={index}
+                key={item.id}
                 className="w-[160px] my-2"
                 src={item.foodImage}
                 alt=""
