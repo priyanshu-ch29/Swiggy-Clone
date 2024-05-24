@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CartLoader = () => {
   return (
-    <div className=" flex items-center justify-center h-[80vh] text-center">
+    <div className=" flex items-center justify-center text-center h-[90vh]">
       <div>
         <img
           className="w-[300px] h-[250px] mx-auto"

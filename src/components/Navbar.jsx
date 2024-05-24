@@ -42,6 +42,9 @@ function Navabar() {
     dispatch(handleSignIn(id));
   };
 
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
+
   return (
     <>
       <nav className="flex  items-center justify-between px-[130px] font-font-poppins shadow-lg py-3">
@@ -51,16 +54,14 @@ function Navabar() {
         <ul className="flex items-center space-x-4 max-lg:hidden">
           {navLinks.map((links) => {
             return (
-              <>
-                <li
-                  key={links.id}
-                  onClick={() => handle(links.id)}
-                  className="px-2 flex hover:cursor-pointer font-bold hover:text-orange-600"
-                >
-                  <span className="m-1">{renderIcon(links.linkLogo)}</span>
-                  {links.linkName}
-                </li>
-              </>
+              <li
+                key={links.id}
+                onClick={() => handle(links.id)}
+                className="px-2 flex hover:cursor-pointer font-bold hover:text-orange-600"
+              >
+                <span className="m-1">{renderIcon(links.linkLogo)}</span>
+                {links.linkName}
+              </li>
             );
           })}
           <Link to="/Cart">
@@ -68,7 +69,7 @@ function Navabar() {
               <span className="m-1">
                 <IoCart />
               </span>
-              Cart(0)
+              Cart({cartItems.length})
             </li>
           </Link>
         </ul>
