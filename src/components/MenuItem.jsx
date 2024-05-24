@@ -2,16 +2,25 @@ import React from "react";
 import { ITEM_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MenuItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleAddItems = (item) => {
     dispatch(addItem(item));
+    toast("Item added to cart", {
+      position: "top-center",
+      type: "success",
+      theme: "dark",
+      autoClose: 3000,
+    });
   };
 
   return (
     <>
+      <ToastContainer />
       {item.map((itemList) => (
         <div key={itemList.card.info.id}>
           <div className="flex justify-between border-b-2 mb-[40px] pt-5 pb-10 h-auto">
