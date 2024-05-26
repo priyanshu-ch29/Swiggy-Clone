@@ -33,7 +33,7 @@ const MenuItem = ({ item }) => {
                 {itemList.card.info.defaultPrice / 100 ||
                   itemList.card.info.price / 100}
               </h4>
-              <h3 className="text-[15px] mt-[45px] text-gray-500 font-semibold">
+              <h3 className="text-[15px] mt-[45px] text-gray-500 font-semibold max-md:hidden">
                 {itemList.card.info.description}
               </h3>
             </div>

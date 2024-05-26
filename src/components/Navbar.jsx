@@ -43,11 +43,10 @@ function Navabar() {
   };
 
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
 
   return (
     <>
-      <nav className="flex  items-center justify-between px-[130px] font-font-poppins shadow-lg py-3">
+      <nav className="flex  items-center justify-around font-font-poppins shadow-lg py-3">
         <Link to={"/"}>
           <img className="w-[50px]" src={logo} alt="" />
         </Link>

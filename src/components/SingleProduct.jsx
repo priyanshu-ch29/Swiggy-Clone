@@ -34,7 +34,7 @@ const RestaurantMenu = () => {
     <>
       <div>
         <div className="my-5 flex items-center w-[55rem] mx-auto">
-          <div className="space-x-2 text-[13px] font-semibold text-gray-500 flex items-center">
+          <div className="space-x-2 text-[13px] font-semibold text-gray-500 flex items-center max-md:m-4">
             {" "}
             <Link to="/">
               <h3>Home /</h3>
@@ -43,7 +43,7 @@ const RestaurantMenu = () => {
             <h3>{name} </h3>
           </div>
         </div>
-        <div className="flex flex-col items-start  w-[55rem] mx-auto ">
+        <div className="flex flex-col items-start  w-[55rem] mx-auto max-sm:w-[480px] max-md:w-[700px] max-sm:m-2 ">
           <h1 className="mb-4 text-[27px] font-bold"> {name} </h1>
           <div className="shadow-lg rounded-xl border w-full px-3 py-3">
             <h3 className="font-semibold text-[18px] flex items-center space-x-3">
