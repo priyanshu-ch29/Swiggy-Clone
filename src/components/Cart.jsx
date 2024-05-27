@@ -9,7 +9,6 @@ import CartData from "./CartData.jsx";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
   const totalBill = useSelector((store) => store.cart.itemTotal);
   const deliveryFee = 60;
   const platformFee = 5;
@@ -22,7 +21,7 @@ const Cart = () => {
   return cartItems.length === 0 ? (
     <CartLoader />
   ) : (
-    <div className="bg-gray-200 w-full h-[90vh]">
+    <div className="bg-gray-200 w-full min-h-[90vh]">
       <div className="flex justify-evenly">
         <div>
           <div className="bg-white shadow m-7 p-9 w-[790px] h-[200px] flex justify-between items-center">

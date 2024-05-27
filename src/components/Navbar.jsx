@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/logo.png";
 import { IoSearch } from "react-icons/io5";
 import { LuBadgePercent } from "react-icons/lu";
@@ -6,15 +6,34 @@ import { IoCart } from "react-icons/io5";
 import { DiAptana } from "react-icons/di";
 import { FaHouseUser } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
-import { navLinks } from "../utils/constant";
 import { IoMenu } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSignIn, handleToggle } from "../utils/toggleSlice";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import { signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../utils/fiebase";
+import { addUser, removeUser } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
 
 function Navabar() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+  }, []);
+
   const dispatch = useDispatch();
   const val = useSelector((store) => store.toggle.value);
+  const user = useSelector((store) => store.user);
 
   const renderIcon = (IconName) => {
     if (IconName === "IoSearch") {
@@ -38,8 +57,18 @@ function Navabar() {
     dispatch(handleToggle());
   };
 
-  const handle = (id) => {
-    dispatch(handleSignIn(id));
+  const handle = () => {
+    dispatch(handleSignIn());
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
   };
 
   const cartItems = useSelector((store) => store.cart.items);
@@ -51,26 +80,68 @@ function Navabar() {
           <img className="w-[50px]" src={logo} alt="" />
         </Link>
         <ul className="flex items-center space-x-4 max-lg:hidden">
-          {navLinks.map((links) => {
-            return (
-              <li
-                key={links.id}
-                onClick={() => handle(links.id)}
-                className="px-2 flex hover:cursor-pointer font-bold hover:text-orange-600"
-              >
-                <span className="m-1">{renderIcon(links.linkLogo)}</span>
-                {links.linkName}
-              </li>
-            );
-          })}
-          <Link to="/Cart">
-            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <IoBagOutline />
+            </span>
+            Swiggy Corporate
+          </li>
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <IoSearch />
+            </span>
+            Search
+          </li>
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <LuBadgePercent />
+            </span>
+            Offers
+          </li>
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <IoBagOutline />
+            </span>
+            Help
+          </li>
+          {!user && (
+            <li
+              onClick={handle}
+              className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center"
+            >
               <span className="m-1">
-                <IoCart />
+                <FaHouseUser />
               </span>
-              Cart({cartItems.length})
+              Sign In
             </li>
-          </Link>
+          )}
+
+          {user && (
+            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+              Hey 🚀{user.displayName}
+            </li>
+          )}
+          {user && (
+            <li
+              onClick={handleSignOut}
+              className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center"
+            >
+              <span className="m-1">
+                <FaUser />
+              </span>
+              Logout
+            </li>
+          )}
+          {user && (
+            <Link to="/Cart">
+              <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+                <span className="m-1">
+                  <IoCart />
+                </span>
+                Cart({cartItems.length})
+              </li>
+            </Link>
+          )}
         </ul>
 
         <IoMenu
@@ -86,19 +157,68 @@ function Navabar() {
         }`}
       >
         <ul className="flex justify-center items-center flex-col space-x-4">
-          {navLinks.map((links) => {
-            return (
-              <>
-                <li
-                  className="px-2 mt-5 flex cursor-pointer font-bold hover:text-orange-600"
-                  key={links.id}
-                >
-                  <span className="m-1">{renderIcon(links.linkLogo)}</span>
-                  {links.linkName}
-                </li>
-              </>
-            );
-          })}
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <IoBagOutline />
+            </span>
+            Swiggy Corporate
+          </li>
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <IoSearch />
+            </span>
+            Search
+          </li>
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <LuBadgePercent />
+            </span>
+            Offers
+          </li>
+          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+            <span className="m-1">
+              <IoBagOutline />
+            </span>
+            Help
+          </li>
+          {!user && (
+            <li
+              onClick={handle}
+              className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center"
+            >
+              <span className="m-1">
+                <FaHouseUser />
+              </span>
+              Sign In
+            </li>
+          )}
+
+          {user && (
+            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+              Hey 🚀{user.displayName}
+            </li>
+          )}
+          {user && (
+            <li
+              onClick={handleSignOut}
+              className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center"
+            >
+              <span className="m-1">
+                <FaUser />
+              </span>
+              Logout
+            </li>
+          )}
+          {user && (
+            <Link to="/Cart">
+              <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+                <span className="m-1">
+                  <IoCart />
+                </span>
+                Cart({cartItems.length})
+              </li>
+            </Link>
+          )}
         </ul>
       </div>
     </>

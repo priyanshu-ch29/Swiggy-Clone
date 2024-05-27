@@ -7,33 +7,28 @@ export const MENU_API =
 export const ITEM_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
 
-export const navLinks = [
-  {
-    id: 1,
-    linkName: "Swiggy Corporate",
-    linkLogo: "IoBagOutline",
-  },
-  {
-    id: 2,
-    linkName: "Search",
-    linkLogo: "IoSearch",
-  },
-  {
-    id: 3,
-    linkName: "Offers",
-    linkLogo: "LuBadgePercent",
-  },
-  {
-    id: 4,
-    linkName: "Help",
-    linkLogo: "IoBagOutline",
-  },
-  {
-    id: 5,
-    linkName: "Sign In",
-    linkLogo: "FaHouseUser",
-  },
-];
+// export const navLinks = [
+//   {
+//     id: 1,
+//     linkName: "Swiggy Corporate",
+//     linkLogo: "IoBagOutline",
+//   },
+//   {
+//     id: 2,
+//     linkName: "Search",
+//     linkLogo: "IoSearch",
+//   },
+//   {
+//     id: 3,
+//     linkName: "Offers",
+//     linkLogo: "LuBadgePercent",
+//   },
+//   {
+//     id: 4,
+//     linkName: "Help",
+//     linkLogo: "IoBagOutline",
+//   },
+// ];
 
 export const WhatsMind = [
   {
