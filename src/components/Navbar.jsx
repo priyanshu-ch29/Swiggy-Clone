@@ -69,12 +69,14 @@ function Navabar() {
             </span>
             Swiggy Corporate
           </li>
-          <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
-            <span className="m-1">
-              <IoSearch />
-            </span>
-            Search
-          </li>
+          <Link to="/SearchRestaurant">
+            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+              <span className="m-1">
+                <IoSearch />
+              </span>
+              Search
+            </li>
+          </Link>
           <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
             <span className="m-1">
               <LuBadgePercent />

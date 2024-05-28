@@ -14,19 +14,15 @@ function Card() {
         Restaurants with online food delivery
       </h2>
       <div className="grid grid-cols-4 gap-1 w-[80%] justify-center justify-items-center mx-auto max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-        {card.map(
-          (
-            items // mapping all hte restaurnt card
-          ) => (
-            <Link
-              key={items?.info?.id}
-              to={`/SingleProduct/${items?.info?.id}`} // link this to specific id of product
-            >
-              <SingleCard items={items} />{" "}
-              {/* passing the card items as prop ot single card so that it can show the card data */}
-            </Link>
-          )
-        )}
+        {card.map((items) => (
+          <Link
+            key={items?.info?.id}
+            to={`/SingleProduct/${items?.info?.id}`} // link this to specific id of product
+          >
+            <SingleCard items={items} />{" "}
+            {/* passing the card items as prop ot single card so that it can show the card data */}
+          </Link>
+        ))}
       </div>
     </div>
   );

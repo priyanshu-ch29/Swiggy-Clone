@@ -5,6 +5,7 @@ import Navabar from "./components/Navbar";
 import Error from "./components/Error";
 import SignIn from "./components/SignIn";
 import Cart from "./components/Cart";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -32,6 +33,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/Cart",
         element: <Cart />,
+      },
+      {
+        path: "/SearchRestaurant",
+        element: <Search />,
       },
     ],
     errorElement: <Error />,

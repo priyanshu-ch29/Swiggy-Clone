@@ -2,6 +2,7 @@ import React from "react";
 import Product from "../components/Product";
 import SignIn from "../components/SignIn";
 import Card from "../components/Card";
+import Footer from "./Footer";
 
 function Body() {
   return (
@@ -9,6 +10,7 @@ function Body() {
       <Product />
       <SignIn />
       <Card />
+      <Footer />
     </div>
   );
 }
