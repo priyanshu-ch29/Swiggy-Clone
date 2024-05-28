@@ -19,27 +19,27 @@
 
 # Features
 
-.User authentication and sign-in
-.Browse restaurants and menus
-.Search functionality
-.Add items to cart
-.View cart and manage items
-.Place orders
+.User authentication and sign-in<br>
+.Browse restaurants and menus<br>
+.Search functionality<br>
+.Add items to cart<br>
+.View cart and manage items<br>
+.Place orders<br>
 
 # Installation
 
 # Clone the repository:
 
-.git clone https://github.com/priyanshu-ch29/Swiggy-Clone.git
-.Navigate to the project directory:
+.git clone https://github.com/priyanshu-ch29/Swiggy-Clone.git<br>
+.Navigate to the project directory:<br>
 
-.cd swiggy-project
-.Install dependencies:
+.cd swiggy-project<br>
+.Install dependencies:<br>
 
-.npm install
-.Start the development server:
+.npm install<br>
+.Start the development server:<br>
 
-.npm start
+.npm start<br>
 
 # Usage
 
@@ -47,69 +47,69 @@
 
 # File Structure
 
-swiggy-project/
-├── assets/
-│ ├── react.svg
-│ └── swiggy.png
-├── components/
-│ ├── Body.jsx
-│ ├── Card.jsx
-│ ├── Cart.jsx
-│ ├── CartData.jsx
-│ ├── CartLoader.jsx
-│ ├── Error.jsx
-│ ├── Footer.jsx
-│ ├── Loader.jsx
-│ ├── MenuCategory.jsx
-│ ├── MenuItem.jsx
-│ ├── Navbar.jsx
-│ ├── Product.jsx
-│ ├── Search.jsx
-│ ├── Shimmer.jsx
-│ ├── Signin.jsx
-│ ├── SingleCard.jsx
-│ └── SingleProduct.jsx
-├── utils/
-│ ├── cartSlice.js
-│ ├── constant.js
-│ ├── firebase.js
-│ ├── store.js
-│ ├── toggleSlice.js
-│ ├── useProductList.js
-│ └── useRestaurantMenu.js
-│ └── userSlice.js
-└── README.md
+swiggy-project/<br>
+├── assets/<br>
+│ ├── react.svg<br>
+│ └── swiggy.png<br>
+├── components/<br>
+│ ├── Body.jsx<br>
+│ ├── Card.jsx<br>
+│ ├── Cart.jsx<br>
+│ ├── CartData.jsx<br>
+│ ├── CartLoader.jsx<br>
+│ ├── Error.jsx<br>
+│ ├── Footer.jsx<br>
+│ ├── Loader.jsx<br>
+│ ├── MenuCategory.jsx<br>
+│ ├── MenuItem.jsx<br>
+│ ├── Navbar.jsx<br>
+│ ├── Product.jsx<br>
+│ ├── Search.jsx<br>
+│ ├── Shimmer.jsx<br>
+│ ├── Signin.jsx<br>
+│ ├── SingleCard.jsx<br>
+│ └── SingleProduct.jsx<br>
+├── utils/<br>
+│ ├── cartSlice.js<br>
+│ ├── constant.js<br>
+│ ├── firebase.js<br>
+│ ├── store.js<br>
+│ ├── toggleSlice.js<br>
+│ ├── useProductList.js<br>
+│ └── useRestaurantMenu.js<br>
+│ └── userSlice.js<br>
+└── README.md<br>
 
 # Components
 
-.Body.jsx: Main body of the application.
-.Card.jsx: Component to display individual restaurant or product cards.
-.Cart.jsx: Cart component to manage items added by the user.
-.CartData.jsx: Component handling the data for the cart.
-.CartLoader.jsx: Loader component for cart operations.
-.Error.jsx: Error handling component.
-.Footer.jsx: Footer of the application.
-.Loader.jsx: General loader component.
-.MenuCategory.jsx: Component to display menu categories.
-.MenuItem.jsx: Component to display individual menu items.
-.Navbar.jsx: Navigation bar component.
-.Product.jsx: Component to display individual product details.
-.Search.jsx: Search functionality component.
-.Shimmer.jsx: Shimmer effect for loading states.
-.Signin.jsx: User sign-in component.
-.SingleCard.jsx: Component to display a single card item.
-.SingleProduct.jsx: Component to display a single product detail.
+.Body.jsx: Main body of the application.<br>
+.Card.jsx: Component to display individual restaurant or product cards.<br>
+.Cart.jsx: Cart component to manage items added by the user.<br>
+.CartData.jsx: Component handling the data for the cart.<br>
+.CartLoader.jsx: Loader component for cart operations.<br>
+.Error.jsx: Error handling component.<br>
+.Footer.jsx: Footer of the application.<br>
+.Loader.jsx: General loader component.<br>
+.MenuCategory.jsx: Component to display menu categories.<br>
+.MenuItem.jsx: Component to display individual menu items.<br>
+.Navbar.jsx: Navigation bar component.<br>
+.Product.jsx: Component to display individual product details.<br>
+.Search.jsx: Search functionality component.<br>
+.Shimmer.jsx: Shimmer effect for loading states.<br>
+.Signin.jsx: User sign-in component.<br>
+.SingleCard.jsx: Component to display a single card item.<br>
+.SingleProduct.jsx: Component to display a single product detail.<br>
 
 # Utilities
 
-.cartSlice.js: Redux slice for managing cart state.
-.constant.js: File for constants used across the project.
-.firebase.js: Firebase configuration and initialization.
-.store.js: Redux store configuration.
-.toggleSlice.js: Redux slice for toggle states.
-.useProductList.js: Custom hook for fetching product lists.
-.useRestaurantMenu.js: Custom hook for fetching restaurant menu.
-vuserSlice.js: Redux slice for user state.
+.cartSlice.js: Redux slice for managing cart state.<br>
+.constant.js: File for constants used across the project.<br>
+.firebase.js: Firebase configuration and initialization.<br>
+.store.js: Redux store configuration.<br>
+.toggleSlice.js: Redux slice for toggle states.<br>
+.useProductList.js: Custom hook for fetching product lists.<br>
+.useRestaurantMenu.js: Custom hook for fetching restaurant menu.<br>
+vuserSlice.js: Redux slice for user state.<br>
 
 # Contributing
 
