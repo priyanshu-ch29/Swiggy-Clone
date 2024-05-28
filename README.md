@@ -2,16 +2,16 @@
 
 # Table of Contents
 
-.Project Overview
-.Features
-.Installation
-.Usage
-.File Structure
-.Components
-.Utilities
-.Contributing
-.License
-.Acknowledgements
+.Project Overview <br>
+.Features <br>
+.Installation <br>
+.Usage <br>
+.File Structure <br>
+.Components <br>
+.Utilities <br>
+.Contributing <br>
+.License <br>
+.Acknowledgements <br>
 
 # Project Overview
 
@@ -30,7 +30,7 @@
 
 # Clone the repository:
 
-.git clone https://github.com/yourusername/swiggy-project.git
+.git clone https://github.com/priyanshu-ch29/Swiggy-Clone.git
 .Navigate to the project directory:
 
 .cd swiggy-project
