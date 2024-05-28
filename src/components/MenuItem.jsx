@@ -9,7 +9,7 @@ const MenuItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleAddItems = (item) => {
-    dispatch(addItem(item));
+    dispatch(addItem(item)); // addItem to cart page
     toast("Item added to cart", {
       position: "top-center",
       type: "success",
@@ -20,7 +20,8 @@ const MenuItem = ({ item }) => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer />{" "}
+      {/*// mappimg all the item which is taken as prop from menuCategory component */}
       {item.map((itemList) => (
         <div key={itemList.card.info.id}>
           <div className="flex justify-between border-b-2 mb-[40px] pt-5 pb-10 h-auto">
@@ -45,7 +46,7 @@ const MenuItem = ({ item }) => {
               />
               <button
                 className="absolute left-7 top-[150px] w-[125px] h-[40px] rounded-lg bg-white font-extrabold text-green-600 text-center"
-                onClick={() => handleAddItems(itemList)}
+                onClick={() => handleAddItems(itemList)} // on click of this button we handle itemlist means we are adding all the item in the cart
               >
                 ADD
               </button>

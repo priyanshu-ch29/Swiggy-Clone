@@ -7,9 +7,9 @@ import MenuCategory from "./MenuCategory";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // to check the id of restaurant it is click
 
-  const { resInfo, resCategory } = useRestaurantMenu(id);
+  const { resInfo, resCategory } = useRestaurantMenu(id); // fetch the api from custom hook
   if (resInfo === null) return <Shimmer />;
 
   const {
@@ -65,9 +65,9 @@ const RestaurantMenu = () => {
       </div>
       <div>
         {resCategory.map((category, index) => (
-          <MenuCategory
+          <MenuCategory // menu category reccomended, vig pizza etc
             key={category.card?.card?.id || index}
-            data={category?.card?.card}
+            data={category?.card?.card} // passing the menu items list as prop
           />
         ))}
       </div>

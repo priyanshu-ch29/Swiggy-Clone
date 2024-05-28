@@ -4,6 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import MenuItem from "./MenuItem";
 
 const MenuCategory = (data) => {
+  // taking the menu item category  data as prop
   const [arrow, setArrow] = useState(false);
   return (
     <div className="m-5 p-3 w-[55rem] mx-auto border-t-[20px] max-sm:w-[480px] max-md:w-[700px] ">

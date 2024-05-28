@@ -6,6 +6,7 @@ const useRestaurantMenu = (id) => {
   const [resCategory, setResCategory] = useState(null);
 
   const fetchData = async () => {
+    // fetch the restaurnt item menu api
     const data = await fetch(MENU_API + id);
     const json = await data.json();
     setResInfo(json.data?.cards[2]?.card?.card?.info);

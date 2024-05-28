@@ -3,7 +3,6 @@ import logo from "../assets/logo.png";
 import { IoSearch } from "react-icons/io5";
 import { LuBadgePercent } from "react-icons/lu";
 import { IoCart } from "react-icons/io5";
-import { DiAptana } from "react-icons/di";
 import { FaHouseUser } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
@@ -22,8 +21,8 @@ function Navabar() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const { uid, email, displayName } = user;
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+        const { uid, email, displayName } = user; // if user login or sign up then user data is going to store in redux
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName })); // you can display its name on screen any use conditional rendering is user is login
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -35,24 +34,6 @@ function Navabar() {
   const val = useSelector((store) => store.toggle.value);
   const user = useSelector((store) => store.user);
 
-  const renderIcon = (IconName) => {
-    if (IconName === "IoSearch") {
-      return <IoSearch />;
-    } else if (IconName === "LuBadgePercent") {
-      return <LuBadgePercent />;
-    } else if (IconName === "IoCart") {
-      return <IoCart />;
-    } else if (IconName === "DiAptana") {
-      return <DiAptana />;
-    } else if (IconName === "FaHouseUser") {
-      return <FaHouseUser />;
-    } else if (IconName === "IoBagOutline") {
-      return <IoBagOutline />;
-    } else {
-      return null;
-    }
-  };
-
   const handlingToggle = () => {
     dispatch(handleToggle());
   };
@@ -62,6 +43,7 @@ function Navabar() {
   };
 
   const handleSignOut = () => {
+    // to sign out user from website
     signOut(auth)
       .then(() => {
         // Sign-out successful.
@@ -71,7 +53,8 @@ function Navabar() {
       });
   };
 
-  const cartItems = useSelector((store) => store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items); // it will show the cartitems afterr user click on add button on any item
+  // we subscribe the items from redux , initially items are empty after clicking on add items array will have item object in it
 
   return (
     <>
@@ -104,7 +87,7 @@ function Navabar() {
             </span>
             Help
           </li>
-          {!user && (
+          {!user && ( // is user is not logged in show him sign in side bar
             <li
               onClick={handle}
               className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center"
@@ -116,7 +99,7 @@ function Navabar() {
             </li>
           )}
 
-          {user && (
+          {user && ( // if user is logged in display his name
             <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
               Hey 🚀{user.displayName}
             </li>
@@ -132,16 +115,15 @@ function Navabar() {
               Logout
             </li>
           )}
-          {user && (
-            <Link to="/Cart">
-              <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
-                <span className="m-1">
-                  <IoCart />
-                </span>
-                Cart({cartItems.length})
-              </li>
-            </Link>
-          )}
+
+          <Link to="/Cart">
+            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+              <span className="m-1">
+                <IoCart />
+              </span>
+              Cart({cartItems.length})
+            </li>
+          </Link>
         </ul>
 
         <IoMenu

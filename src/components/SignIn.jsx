@@ -10,17 +10,13 @@ import {
 } from "firebase/auth";
 import { validation } from "../utils/validate";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
 
 function SignIn() {
-  const navigate = useNavigate();
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
   const [isSignUpForm, setisSignUpForm] = useState(false);
   const value = useSelector((store) => store.toggle.sideBar);
-  const inputVisible = useSelector((store) => store.toggle.input);
-  const codeVisible = useSelector((store) => store.toggle.visible);
   const dispatch = useDispatch();
 
   // this is for close the sign up page
@@ -28,15 +24,11 @@ function SignIn() {
     dispatch(handleToggleCross());
   };
 
-  // this is for referral code visible
-  const handleCode = () => {
-    dispatch(handleReferralCode());
-  };
-
   const handleAuthentication = (e) => {
-    const validate = validation(email.current.value, password.current.value);
+    const validate = validation(email.current.value, password.current.value); // validate the email and password from validation.js
     if (validate != null) return;
     if (!isSignUpForm) {
+      // if not signup form then autenticate the login page
       signInWithEmailAndPassword(
         auth,
         email.current.value,
@@ -51,6 +43,7 @@ function SignIn() {
         });
     } else {
       createUserWithEmailAndPassword(
+        // create user authentication
         auth,
         email.current.value,
         password.current.value
@@ -59,7 +52,7 @@ function SignIn() {
           // Signed up
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value,
+            displayName: name.current.value, // to add display name to api
           })
             .then(() => {
               const { uid, email, displayName } = auth.currentUser;
@@ -126,11 +119,11 @@ function SignIn() {
             />
           </div>
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => e.preventDefault()} // prevent refreshing of page
             action=""
             className="flex flex-col"
           >
-            {isSignUpForm && (
+            {isSignUpForm && ( // if it is sign up page render this
               <>
                 <input
                   className=" border-2 w-full h-[70px] px-3 focus:outline-none"
@@ -155,31 +148,14 @@ function SignIn() {
                 />
                 <input
                   ref={password}
-                  className=" border-2 w-full h-[70px] px-3 focus:outline-none"
+                  className=" border-2 w-full h-[70px] px-3 focus:outline-none mb-4"
                   type="Password"
                   name="password"
                   placeholder="Password"
                 />
-                {codeVisible && (
-                  <p
-                    onClick={handleCode}
-                    id="code"
-                    className=" my-4 text-blue-600 text-[14px] font-medium hover:cursor-pointer"
-                  >
-                    Have a referral code?
-                  </p>
-                )}
-                {inputVisible && (
-                  <input
-                    className=" border-2 w-full h-[70px] mb-4 px-3 focus:outline-none"
-                    type="text"
-                    name="referralCode"
-                    placeholder="Referral Code"
-                  />
-                )}
               </>
             )}
-            {!isSignUpForm && (
+            {!isSignUpForm && ( // login page
               <>
                 <input
                   ref={email}
@@ -198,7 +174,7 @@ function SignIn() {
               </>
             )}
             <button
-              onClick={(e) => handleAuthentication(e)}
+              onClick={(e) => handleAuthentication(e)} // authenticate the user data and display on firebase
               className=" cursor-pointer shadow bg-orange-500 border-2 rounded text-center h-[50px] text-white font-semibold text-[14px]"
             >
               {isSignUpForm ? "Continue" : "Login"}

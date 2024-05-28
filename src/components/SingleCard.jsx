@@ -2,8 +2,9 @@ import React from "react";
 import { CDN_URL } from "../utils/constant";
 
 const SingleCard = ({ items }) => {
+  // taking items as aa prop from card
   const { cloudinaryImageId, name, cuisines, avgRatingString, areaName } =
-    items?.info;
+    items?.info; // destructuring of card info
 
   const { deliveryTime } = items?.info?.sla;
 

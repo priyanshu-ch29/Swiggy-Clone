@@ -4,6 +4,7 @@ import error from "../assets/error.png";
 import { Link } from "react-router-dom";
 
 const Error = () => {
+  // if any error occured render this component
   const err = useRouteError();
   return (
     <div className="flex justify-center items-center flex-col  w-[100%] h-[100vh]">

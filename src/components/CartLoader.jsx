@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const CartLoader = () => {
   return (
+    // if cart.lenth == 0 then display this cart loader
     <div className=" flex items-center justify-center text-center h-[90vh]">
       <div>
         <img

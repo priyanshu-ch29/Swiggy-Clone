@@ -5,8 +5,6 @@ export const toggleSlice = createSlice({
   initialState: {
     value: false,
     sideBar: false,
-    input: false,
-    visible: true,
   },
   reducers: {
     // fir total reduccer ko export krna  pdega (reducer ma function likha jyga)
@@ -19,10 +17,6 @@ export const toggleSlice = createSlice({
     },
     handleToggleCross: (state) => {
       state.sideBar = false;
-    },
-    handleReferralCode: (state) => {
-      state.input = !state.input;
-      state.visible = !state.visible;
     },
   },
 });
