@@ -83,9 +83,7 @@ function SignIn() {
           value ? "block" : "hidden"
         }`}
       >
-        <div
-          className={`h-screen w-[36%]  z-50  bg-white absolute right-0 py-8 pr-[150px] pl-9`}
-        >
+        <div className="h-screen w-[36%]  z-50  bg-white absolute right-0 py-8 pr-[150px] pl-9 max-lg:w-[50%] max-md:pr-[100px] max-lg:pr-[90px] max-sm:w-[70%] max-md:w-[50%]">
           <RxCross2
             className=" text-3xl hover:cursor-pointer"
             onClick={handleCross}
