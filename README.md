@@ -1,5 +1,5 @@
-# Note 
-# Live link : https://swiggy-clone-umber.vercel.app/  but to use this first you need to add cors plugin extension on your browser without this api will not load as real api is used in this project
+
+# Live link : https://swiggy-clone-umber.vercel.app/
 
 # Swiggy Project
 
