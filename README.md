@@ -12,25 +12,25 @@ This project is a clone of Swiggy, a popular food delivery app, built using mode
 
 # Features
 
--> User Authentication: Users can sign up and log in through Firebase Authentication. Once signed up, their data is securely stored in Firebase, allowing for seamless user management and personalized experiences.
--> Responsive Design: The app is designed to be fully responsive, ensuring a seamless experience on mobile devices. Tailwind CSS is utilized to implement a responsive layout that adjusts gracefully to different screen sizes.
--> Cart Functionality:
--> Add to Cart: Users can browse through a list of food items and add their desired items to the cart.
--> View Cart: The cart is accessible from any page, showing a summary of items added along with their quantities and prices.
--> Update Cart: Users can update the quantity of items directly from the cart, ensuring flexibility and ease of use.
--> Remove Items: Items can be removed from the cart if the user changes their mind.
--> Persisted State: The cart state is managed using Redux Toolkit, ensuring that the cart content persists across page reloads and navigations.
+-> User Authentication: Users can sign up and log in through Firebase Authentication. Once signed up, their data is securely stored in Firebase, allowing for seamless user management and personalized experiences.<br>
+-> Responsive Design: The app is designed to be fully responsive, ensuring a seamless experience on mobile devices. Tailwind CSS is utilized to implement a responsive layout that adjusts gracefully to different screen sizes.<br>
+-> Cart Functionality:<br>
+-> Add to Cart: Users can browse through a list of food items and add their desired items to the cart.<br>
+-> View Cart: The cart is accessible from any page, showing a summary of items added along with their quantities and prices.<br>
+-> Update Cart: Users can update the quantity of items directly from the cart, ensuring flexibility and ease of use.<br>
+-> Remove Items: Items can be removed from the cart if the user changes their mind.<br>
+-> Persisted State: The cart state is managed using Redux Toolkit, ensuring that the cart content persists across page reloads and navigations.<br>
 
 # Technical Stack
 
-HTML: For structuring the content.
-Tailwind CSS: For creating a responsive and modern UI.
-JavaScript: For adding interactivity and logic.
-ReactJS: For building a dynamic user interface.
-Redux Toolkit: For efficient state management.
-React Router: For managing navigation between different pages.
-Custom Hooks: For encapsulating reusable logic.
-Firebase Authentication: For secure user authentication and data management.
+HTML: For structuring the content.<br>
+Tailwind CSS: For creating a responsive and modern UI.<br>
+JavaScript: For adding interactivity and logic.<br>
+ReactJS: For building a dynamic user interface.<br>
+Redux Toolkit: For efficient state management.<br>
+React Router: For managing navigation between different pages.<br>
+Custom Hooks: For encapsulating reusable logic.<br>
+Firebase Authentication: For secure user authentication and data management.<br>
 
 # Responsive Design
 
