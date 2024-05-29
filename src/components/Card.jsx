@@ -6,6 +6,11 @@ import useProductList from "../utils/useProductList";
 function Card() {
   const { card } = useProductList(); // custom hook for fetching the card  data from swiggy api
 
+  if (!card) {
+    // Handle case where card is undefined
+    return <Shimmer />;
+  }
+
   return card.length === 0 ? (
     <Shimmer />
   ) : (

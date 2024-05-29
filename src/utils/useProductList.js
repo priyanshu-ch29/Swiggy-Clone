@@ -5,7 +5,7 @@ const useProductList = () => {
   const [card, setCard] = useState([]);
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const fetchData = async () => {
     const data = await fetch(
