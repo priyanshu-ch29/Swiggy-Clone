@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
-// import { MENU_API } from "./constant";
+import { MENU_API } from "./constant";
 
 const useRestaurantMenu = (id) => {
   const [resInfo, setResInfo] = useState(null);
   const [resCategory, setResCategory] = useState(null);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const fetchData = async () => {
     // fetch the restaurnt item menu api
-    const MenuApi =
-      "https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6691565&lng=77.45375779999999&restaurantId=";
-    const data = await fetch(MenuApi + id);
+    const data = await fetch(
+      MENU_API,
+      {
+        headers: {
+          "x-cors-api-key": "temp_48b0835c4b5263584e5999a7a70ae852",
+        },
+      } + id
+    );
     const json = await data.json();
 
     setResInfo(json.data?.cards[2]?.card?.card?.info);
@@ -21,10 +29,6 @@ const useRestaurantMenu = (id) => {
       )
     );
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return { resInfo, resCategory };
 };

@@ -9,7 +9,6 @@ const useProductList = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      // api url
       "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6691565&lng=77.45375779999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
       {
         headers: {
