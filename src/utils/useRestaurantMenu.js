@@ -10,14 +10,7 @@ const useRestaurantMenu = (id) => {
 
   const fetchData = async () => {
     // fetch the restaurnt item menu api
-    const data = await fetch(
-      MENU_API,
-      {
-        headers: {
-          "x-cors-api-key": "temp_48b0835c4b5263584e5999a7a70ae852",
-        },
-      } + id
-    );
+    const data = await fetch(MENU_API + id);
     const json = await data.json();
 
     setResInfo(json.data?.cards[2]?.card?.card?.info);
