@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { CORS_PROXY_API, RES_API } from "./constant";
 
 const useProductList = () => {
   // fetching the real api data from swiggy
@@ -8,14 +9,7 @@ const useProductList = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6691565&lng=77.45375779999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
-      {
-        headers: {
-          "x-cors-api-key": "temp_48b0835c4b5263584e5999a7a70ae852",
-        },
-      }
-    );
+    const data = await fetch(`${CORS_PROXY_API}/fetch?${RES_API}`);
     const json = await data.json();
     setCard(
       // this is where the card data is
@@ -26,3 +20,9 @@ const useProductList = () => {
 };
 
 export default useProductList;
+
+// {
+//   headers: {
+//     "x-cors-api-key": "temp_48b0835c4b5263584e5999a7a70ae852",
+//   },
+// }
