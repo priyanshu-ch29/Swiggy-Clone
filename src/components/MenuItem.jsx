@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ITEM_URL } from "../utils/constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const MenuItem = ({ item }) => {
   const dispatch = useDispatch();
+  const cart = useSelector((store) => store.cart.items);
 
   const handleAddItems = (item) => {
     dispatch(addItem(item)); // addItem to cart page
@@ -17,6 +18,19 @@ const MenuItem = ({ item }) => {
       autoClose: 3000,
     });
   };
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("SwiggyCart"));
+    if (storedCart) {
+      storedCart.forEach((item) => {
+        dispatch(addItem(item)); // Initialize cart state with data from local storage
+      });
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem("SwiggyCart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <>
