@@ -1,6 +1,3 @@
-# Note
-
--> In this swiggy real api is used so there will be cors plugin issue so for anyone to use this first they must have the cors plugin extension in their browser otherwise the restaurant cards will not display or api will not fetch
 
 # Live link : https://swiggy-clone-umber.vercel.app/
 
