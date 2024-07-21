@@ -44,7 +44,7 @@ function SignIn() {
     } else {
       createUserWithEmailAndPassword(
         // create user authentication
-        auth,
+
         email.current.value,
         password.current.value
       )
@@ -83,7 +83,7 @@ function SignIn() {
           value ? "block" : "hidden"
         }`}
       >
-        <div className="h-screen w-[36%]  z-50  bg-white absolute right-0 py-8 pr-[150px] pl-9 max-lg:w-[50%] max-md:pr-[100px] max-lg:pr-[90px] max-sm:w-[70%] max-md:w-[50%]">
+        <div className="h-screen w-[36%]  z-50  bg-white absolute right-0 py-8 pr-[150px] pl-9 max-lg:w-[50%] max-md:pr-[100px] max-lg:pr-[90px] max-sm:w-[90%] max-md:w-[50%]">
           <RxCross2
             className=" text-3xl hover:cursor-pointer"
             onClick={handleCross}
@@ -129,6 +129,7 @@ function SignIn() {
                   name="phone"
                   placeholder="Phone Number"
                   pattern="[0-9]+"
+                  autoComplete="off"
                 />
                 <input
                   ref={name}
@@ -136,6 +137,7 @@ function SignIn() {
                   type="name"
                   name="fl_name"
                   placeholder="Name"
+                  autoComplete="off"
                 />
                 <input
                   ref={email}
@@ -143,6 +145,7 @@ function SignIn() {
                   type="email"
                   name="mail"
                   placeholder="Email"
+                  autoComplete="off"
                 />
                 <input
                   ref={password}
@@ -150,6 +153,7 @@ function SignIn() {
                   type="Password"
                   name="password"
                   placeholder="Password"
+                  autoComplete="off"
                 />
               </>
             )}
@@ -161,6 +165,7 @@ function SignIn() {
                   type="email"
                   name="email"
                   placeholder="email"
+                  autoComplete="off"
                 />
                 <input
                   ref={password}
@@ -168,6 +173,7 @@ function SignIn() {
                   type="password"
                   name="Password"
                   placeholder="password"
+                  autoComplete="off"
                 />
               </>
             )}

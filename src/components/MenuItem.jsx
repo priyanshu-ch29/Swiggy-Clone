@@ -19,19 +19,6 @@ const MenuItem = ({ item }) => {
     });
   };
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("SwiggyCart"));
-    if (storedCart) {
-      storedCart.forEach((item) => {
-        dispatch(addItem(item)); // Initialize cart state with data from local storage
-      });
-    }
-  }, [dispatch]);
-
-  useEffect(() => {
-    localStorage.setItem("SwiggyCart", JSON.stringify(cart));
-  }, [cart]);
-
   return (
     <>
       <ToastContainer />{" "}

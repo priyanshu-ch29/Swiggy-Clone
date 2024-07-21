@@ -57,42 +57,42 @@ const Cart = () => {
       <div className="bg-gray-200 w-full min-h-[90vh]">
         <div className="flex justify-evenly">
           <div>
-            <div className="bg-white shadow m-7 p-9 w-[790px] h-[200px] flex justify-between items-center max-[1362px]:w-[600px] max-[1175px]:w-[400px] max-[978px]:w-[200px]">
+            <div className="bg-white shadow m-7 p-9 w-[790px] h-[200px] flex justify-between items-center max-[1362px]:w-[600px] max-[1175px]:w-[400px] max-[978px]:w-[150px] max-[978px]:h-[40vh]">
               <FaUserCircle className="text-[40px] absolute left-[50px] max-[926px]:hidden max-md:left-[30px] max-lg:left-[30px] " />
               <div>
                 {user && ( // if user is logged in then display his name, address, payment
                   <>
-                    <h2 className=" font-bold font-font-poppins text-[22px] mt-4 ml-4">
+                    <h2 className=" font-bold font-font-poppins text-[22px] mt-4 ml-3 max-[978px]:text-lg max-[978px]:-ml-6">
                       Account
                     </h2>
-                    <h2 className=" font-bold font-font-poppins text-[22px] mt-4 ml-4">
+                    <h2 className=" font-bold font-font-poppins text-[22px] mt-4 ml-3 max-[978px]:text-lg max-[978px]:-ml-6">
                       Hello {user.displayName} 🚀🚀
                     </h2>
                   </>
                 )}
                 {!user && ( // if user is not logged in display a button to sign in or sign up
                   <>
-                    <h2 className=" font-bold font-font-poppins text-[22px] mt-4 ml-4">
+                    <h2 className=" font-bold font-font-poppins text-[22px] mt-4 ml-4 max-[978px]:text-lg max-[978px]:-ml-2">
                       Account
                     </h2>
-                    <span className=" text-gray-500 font-font-poppins font-normal text-[15px] ml-4 ">
+                    <span className=" text-gray-500 font-font-poppins font-normal text-[15px] ml-4 max-[978px]:text-sm max-[978px]:hidden">
                       To place your order now, log in to your existing account
                       or sign up.
                     </span>
                     <button
                       onClick={signIn} // dispaly a sidebar for login and sign up
-                      className="w-[140px] h-[50px] m-4 border border-green-400 text-green-500 font-font-poppins font-medium"
+                      className="w-[140px] h-[50px] m-4 border border-green-400 text-green-500 font-font-poppins font-medium max-[978px]:-ml-8"
                     >
-                      <span className="font-light text-[13px]">
+                      <span className="font-light text-[13px] max-[978px]:text-sm max-[978px]:-ml">
                         Have an Account?
                       </span>{" "}
                       LOG IN
                     </button>
                     <button
                       onClick={signIn}
-                      className="w-[140px] h-[50px] bg-green-600 m-4 text-white font-font-poppins font-medium"
+                      className="w-[140px] h-[50px] bg-green-600 m-4 text-white font-font-poppins font-medium max-[978px]:-ml-8"
                     >
-                      <span className=" font-light text-[13px]">
+                      <span className=" font-light text-[13px] max-[978px]:text-sm max-[978px]:-ml">
                         New to Swiggy?
                       </span>{" "}
                       SIGN UP
@@ -111,9 +111,9 @@ const Cart = () => {
             </div>
             {!user && (
               <>
-                <div className="bg-white shadow p-3 m-7 w-[790px] h-[100px]  max-[1362px]:w-[600px]  max-[1175px]:w-[400px] max-[978px]:w-[200px]">
+                <div className="bg-white shadow p-3 m-7 w-[790px] h-[100px]  max-[1362px]:w-[600px]  max-[1175px]:w-[400px] max-[978px]:w-[150px]">
                   <FaLocationDot className="text-[40px] absolute left-[50px] max-[926px]:hidden max-md:left-[30px] max-lg:left-[30px]" />
-                  <h2 className=" font-font-poppins font-medium text-[17px] text-gray-500 m-7">
+                  <h2 className=" font-font-poppins font-medium text-[17px] text-gray-500 m-7 max-[978px]:text-md max-[978px]:ml-0 ">
                     Delivery Address
                   </h2>
                 </div>
@@ -121,23 +121,23 @@ const Cart = () => {
             )}
             {user && ( // if user is logged in show his delivery address
               <>
-                <div className="bg-white shadow p-3 m-7 w-[790px] h-[100px]  max-[1362px]:w-[600px]  max-[1175px]:w-[400px] max-[978px]:w-[200px] max-[981px]:h-[200px]">
+                <div className="bg-white shadow p-3 m-7 w-[790px] h-[100px]  max-[1362px]:w-[600px]  max-[1175px]:w-[400px] max-[978px]:w-[150px] max-[981px]:h-[200px]">
                   <FaLocationDot className="text-[40px] absolute left-[50px] max-[926px]:hidden max-md:left-[30px] max-lg:left-[30px]" />
-                  <h2 className=" font-font-poppins font-medium text-[17px] text-gray-500 mt-4 ml-10">
+                  <h2 className=" font-font-poppins font-medium text-[17px] text-gray-500 mt-4 ml-10 max-[978px]:text-md max-[978px]:ml-0">
                     Tower 1D Flat no - 605 Skardi Greens Golf Links, Ghaziabad,
                     Uttar Pradesh, India.
                   </h2>
                 </div>
               </>
             )}
-            <div className="bg-white shadow p-3 m-7 w-[790px] h-[100px]  max-[1362px]:w-[600px]  max-[1175px]:w-[400px] max-[978px]:w-[200px]">
+            <div className="bg-white shadow p-3 m-7 w-[790px] h-[100px]  max-[1362px]:w-[600px]  max-[1175px]:w-[400px] max-[978px]:w-[150px]">
               <IoIosWallet className="text-[40px] absolute left-[50px] max-[926px]:hidden max-md:left-[30px] max-lg:left-[30px]" />
-              <h2 className=" font-font-poppins font-medium text-[17px] text-gray-500 ml-10 mt-4">
+              <h2 className=" font-font-poppins font-medium text-[17px] text-gray-500 ml-10 mt-4 max-[978px]:text-lg max-[978px]:ml-0">
                 Payment
               </h2>
             </div>
           </div>
-          <div className="bg-white shadow p-3 m-7 w-[500px] max-[780px]:w-[300px] max-[575px]:w-[200px]">
+          <div className="bg-white shadow p-3 m-7 w-[500px] max-[780px]:w-[300px] max-[575px]:w-[220px]">
             <div>
               {cartItems.map((item) => {
                 // mapping the cart items data in the cart component from cartData component
