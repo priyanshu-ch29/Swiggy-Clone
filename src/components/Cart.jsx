@@ -56,7 +56,7 @@ const Cart = () => {
       )}
       <div className="bg-gray-200 w-full min-h-[90vh]">
         <div className="flex justify-evenly">
-          <div>
+          <div className="max-[978px]:hidden">
             <div className="bg-white shadow m-7 p-9 w-[790px] h-[200px] flex justify-between items-center max-[1362px]:w-[600px] max-[1175px]:w-[400px] max-[978px]:w-[150px] max-[978px]:h-[40vh]">
               <FaUserCircle className="text-[40px] absolute left-[50px] max-[926px]:hidden max-md:left-[30px] max-lg:left-[30px] " />
               <div>
@@ -137,7 +137,7 @@ const Cart = () => {
               </h2>
             </div>
           </div>
-          <div className="bg-white shadow p-3 m-7 w-[500px] max-[780px]:w-[300px] max-[575px]:w-[220px]">
+          <div className="bg-white shadow p-3 m-7 w-[500px] max-[780px]:w-[300px] max-[575px]:w-[320px]">
             <div>
               {cartItems.map((item) => {
                 // mapping the cart items data in the cart component from cartData component
@@ -175,7 +175,7 @@ const Cart = () => {
                 <div className="flex justify-evenly max-[585px]:flex-col">
                   <button
                     onClick={emptyCart} // onClick empty the cart
-                    className="m-9 bg-orange-500 text-white p-2 w-[150px] max-[585px]:w-[100px]"
+                    className="m-9 bg-orange-500 text-white p-2 w-[150px] max-[585px]:w-[200px]"
                   >
                     Clear Cart
                   </button>
@@ -183,7 +183,7 @@ const Cart = () => {
                     <>
                       <button
                         onClick={handleCheckout} // display a message showing thank u for ordering
-                        className="m-9 bg-orange-500 text-white p-2 w-[150px] max-[585px]:w-[100px]"
+                        className="m-9 bg-orange-500 text-white p-2 w-[150px] max-[585px]:w-[200px]"
                       >
                         Checkout
                       </button>
