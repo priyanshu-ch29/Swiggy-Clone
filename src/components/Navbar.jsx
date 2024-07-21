@@ -155,7 +155,6 @@ function Navabar() {
               Search
             </li>
           </Link>
-
           <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
             <span className="m-1">
               <LuBadgePercent />
@@ -179,7 +178,6 @@ function Navabar() {
               Sign In
             </li>
           )}
-
           {user && (
             <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
               Hey 🚀{user.displayName}
@@ -196,16 +194,14 @@ function Navabar() {
               Logout
             </li>
           )}
-          {user && (
-            <Link to="/Cart">
-              <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
-                <span className="m-1">
-                  <IoCart />
-                </span>
-                Cart({cartItems.length})
-              </li>
-            </Link>
-          )}
+          <Link to="/Cart">
+            <li className="flex hover:cursor-pointer font-bold hover:text-orange-600 items-center">
+              <span className="m-1">
+                <IoCart />
+              </span>
+              Cart({cartItems.length})
+            </li>
+          </Link>
         </ul>
       </div>
     </>
